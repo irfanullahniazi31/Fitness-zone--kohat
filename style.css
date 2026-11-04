@@ -1,0 +1,407 @@
+/* =========================================================
+   Fitness Zone Kohat - style.css
+   ========================================================= */
+
+:root {
+  --bg: #0e0f12;
+  --panel: #17191f;
+  --panel-2: #1f222a;
+  --accent: #a4e22b;
+  --accent-dark: #86bd1c;
+  --text: #f2f3f5;
+  --muted: #9aa0ab;
+  --radius: 14px;
+  --header-h: 64px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--header-h);   /* space for the fixed navbar */
+  min-height: 100vh;             
+  display: flex;                  
+  flex-direction: column;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 18px rgba(164, 226, 43, 0.4);
+}
+.btn:active {
+  transform: scale(0.95);
+  background: var(--accent-dark);
+  color: #111;
+}
+.btn-small { padding: 8px 20px; font-size: 0.9rem; }
+
+/* =========================================================
+   1. NAVBAR - fixed (Flexbox)
+   ========================================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(14, 15, 18, 0.96);
+  border-bottom: 1px solid #262932;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;   /* logo left, rest right */
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: var(--header-h);
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.logo img { width: 48px; height: 48px; }
+.logo-text span { color: var(--accent); }
+.footer-logo { width: 90px; height: 90px; margin-bottom: 10px; }
+
+/* Mobile menu: */
+.menu-toggle { display: none; }
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.menu-button span {
+  width: 26px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+.menu-button:hover span { background: var(--accent); }
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: var(--panel);
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+}
+.menu-toggle:checked ~ .nav-links { display: flex; }
+
+.nav-links a {
+  display: block;
+  padding: 14px 20px;
+  border-top: 1px solid #262932;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.nav-links a:hover { background: var(--accent); color: #111; }
+
+/* Current page link looks different */
+.nav-links a.active { color: var(--accent); border-left: 4px solid var(--accent); }
+.nav-links a.active:hover { color: #111; }
+
+.nav-cta { color: var(--accent); }
+
+/* =========================================================
+   2. HERO - centred content
+   ========================================================= */
+.hero {
+  position: relative;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 80px 20px;
+  background:
+  radial-gradient(circle at 20% 20%, #2f4a0e 0%, transparent 45%),
+  radial-gradient(circle at 85% 80%, #12303f 0%, transparent 45%),
+  #14161b;
+}
+
+.hero-badge {
+  position: absolute;               /* placed relative to .hero */
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: #111;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-content { max-width: 680px; }
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+
+.hero p { color: #cfd3da; margin-bottom: 28px; font-size: 1.05rem; }
+
+/* =========================================================
+   3. MAIN LAYOUT - sidebar + content
+   ========================================================= */
+.layout {
+  flex: 1;                     
+  display: grid;
+  grid-template-columns: 1fr;       
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.sidebar { display: grid; gap: 16px; align-self: start; }
+
+.side-box {
+  background: var(--panel);
+  border: 1px solid #262932;
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.side-box h2 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.side-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #2c303a;
+  font-size: 0.92rem;
+}
+.side-list li:last-child { border-bottom: none; }
+.side-list span { color: var(--muted); }
+
+.side-links a {
+  display: block;
+  padding: 6px 0;
+  color: var(--text);
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.side-links a:hover { color: var(--accent); padding-left: 8px; }
+
+.section { margin-bottom: 56px; scroll-margin-top: calc(var(--header-h) + 20px); }
+.section-title { font-size: 1.8rem; text-transform: uppercase; margin-bottom: 6px; }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+.section-sub { color: var(--muted); margin: 14px 0 24px; }
+
+/* =========================================================
+   4. CARDS - CSS Grid 
+   ========================================================= */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.card {
+  position: relative;    
+  background: var(--panel);
+  border-radius: var(--radius);  
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);      /* lift up on hover */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+}
+.card img { width: 100%; aspect-ratio: 10 / 7; object-fit: cover; }
+.card-body { padding: 18px 18px 22px; }
+.card-body h3 { margin-bottom: 8px; font-size: 1.15rem; }
+.card-body p { color: var(--muted); font-size: 0.93rem; margin-bottom: 16px; }
+
+.new-badge {
+  position: absolute;  
+  top: 12px;
+  left: 12px;
+  background: #22d3ee;
+  color: #06222a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+.quote {
+  background: var(--panel-2);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+.quote p { font-style: italic; }
+.quote footer { display: flex; flex-direction: column; font-size: 0.9rem; }
+.quote footer span { color: var(--muted); }
+
+.join {
+  text-align: center;
+  background: linear-gradient(135deg, #243d07, #17191f);
+  border: 1px solid #2f4a0e;
+  border-radius: var(--radius);
+  padding: 40px 20px;
+}
+.join h2 { font-size: 1.8rem; margin-bottom: 8px; text-transform: uppercase; }
+.join p { color: #cfd3da; margin-bottom: 22px; }
+
+/* =========================================================
+   6. FOOTER - stacked on mobile
+   ========================================================= */
+.site-footer {
+  background: var(--panel);
+  border-top: 3px solid var(--accent);
+  padding: 40px 20px 20px;
+  scroll-margin-top: var(--header-h);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;       /* stacked on mobile */
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-col h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.footer-col p { color: var(--muted); font-size: 0.93rem; }
+
+.social { display: flex; gap: 10px; flex-wrap: wrap; }
+.social a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #333844;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.social a:hover { background: var(--accent); color: #111; transform: translateY(-3px); }
+
+.copyright {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid #262932;
+}
+
+/* =========================================================
+   TABLET: 768px to 991px
+   ========================================================= */
+@media (min-width: 768px) {
+  .hero h1 { font-size: 3.2rem; }
+  .layout { padding: 50px 32px; gap: 36px; }
+  .navbar { padding: 0 32px; }
+
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .testimonials { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Sidebar boxes sit side by side above the content on tablet */
+  .sidebar { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =========================================================
+   DESKTOP: 992px and above
+   ========================================================= */
+@media (min-width: 992px) {
+  /* Horizontal navbar */
+  .menu-button { display: none; }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    margin: 0;
+    background: none;
+  }
+  .nav-links a {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  .nav-links a.active { border-left: none; background: rgba(164, 226, 43, 0.12); }
+  .nav-links a.active:hover { background: var(--accent); }
+  .nav-cta { border: 2px solid var(--accent) !important; margin-left: 8px; }
+
+  .hero h1 { font-size: 4rem; }
+  .layout { grid-template-columns: 280px 1fr; gap: 40px; }
+
+  .sidebar {
+    grid-template-columns: 1fr;
+    position: sticky;              
+    top: calc(var(--header-h) + 20px);
+  }
+
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,199 @@
+<!--
+  Fitness Zone Kohat - Assignment 04 (CS371 Web Development)
+  Student: Irfan Ullah | Roll No: CS120242064 | BSCS
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fitness Zone Kohat - bodybuilding, weight loss, crossfit, boxing and personal training in Kohat, KPK.">
+  <title>Fitness Zone Kohat | Build the Strongest Version of You</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== 1. NAVBAR (fixed) ===== -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#home" class="logo"><img src="images/logo.jpg" alt="Fitness Zone logo" width="48" height="48"><span class="logo-text">Fitness<span>Zone</span></span></a>
+
+      <!-- Pure-CSS mobile menu (checkbox hack, no JavaScript) -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-button" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#testimonials">Members</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#join" class="nav-cta">Join Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== 2. HERO ===== -->
+  <section class="hero" id="home">
+    <span class="hero-badge">Open Daily</span>
+    <div class="hero-content">
+      <h1>Build the <em>Strongest</em> Version of You</h1>
+      <p>Welcome to Fitness Zone Kohat. Modern equipment, experienced trainers and a friendly atmosphere to help you reach your fitness goals.</p>
+      <a href="#join" class="btn">Join Today</a>
+    </div>
+  </section>
+
+  <!-- ===== 3. MAIN LAYOUT WITH SIDEBAR ===== -->
+  <div class="layout">
+
+    <aside class="sidebar" aria-label="Gym information">
+      <div class="side-box">
+        <h2>Gym Timings</h2>
+        <ul class="side-list">
+          <li><span>Open</span><strong>8:30 AM</strong></li>
+          <li><span>Close</span><strong>9:00 PM</strong></li>
+          <li><span>Days</span><strong>Every day</strong></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h2>Fee Structure</h2>
+        <ul class="side-list">
+          <li><span>Admission</span><strong>Rs 1,000</strong></li>
+          <li><span>Monthly</span><strong>Rs 3,000</strong></li>
+          <li><span>Quarterly</span><strong>Rs 8,000</strong></li>
+          <li><span>Yearly</span><strong>Rs 28,000</strong></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h2>Quick Links</h2>
+        <ul class="side-links">
+          <li><a href="#programs">Our Programs</a></li>
+          <li><a href="#testimonials">Member Stories</a></li>
+          <li><a href="#contact">Find Us</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+
+      <!-- ===== 4. CARDS ===== -->
+      <section id="programs" class="section">
+        <h2 class="section-title">Our Programs</h2>
+        <p class="section-sub">Pick the program that fits your goal. Ask our trainers about the best plan for you.</p>
+
+        <div class="cards">
+          <article class="card">
+            <img src="images/bodybuilding.jpeg" alt="Dumbbell illustration for bodybuilding" width="400" height="280">
+            <div class="card-body">
+              <h3>Bodybuilding</h3>
+              <p>Build size and strength with free weights, machines and a guided muscle-gain plan.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/weight-loss.jpeg" alt="Heart and pulse illustration for weight loss" width="400" height="280">
+            <div class="card-body">
+              <h3>Weight Loss</h3>
+              <p>Cardio and diet guidance designed to burn fat safely and keep it off.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <span class="new-badge">New</span>
+            <img src="images/crossfit.jpeg" alt="Bicycle illustration for crossfit" width="400" height="280">
+            <div class="card-body">
+              <h3>Crossfit</h3>
+              <p>High-intensity mixed workouts that build stamina, power and speed.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/boxing.jpeg" alt="Boxing glove illustration" width="400" height="280">
+            <div class="card-body">
+              <h3>Boxing</h3>
+              <p>Learn punching technique, footwork and fitness with experienced trainers.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/personal-training.jpeg" alt="Person in training pose illustration" width="400" height="280">
+            <div class="card-body">
+              <h3>Personal Training</h3>
+              <p>One-to-one coaching with a plan made for your body and your goals.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/diet-plans.jpeg" alt="Apple illustration for diet plans" width="400" height="280">
+            <div class="card-body">
+              <h3>Diet Plans</h3>
+              <p>Simple, affordable meal plans that match your training and your budget.</p>
+              <a href="#join" class="btn btn-small">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 5. TESTIMONIALS ===== -->
+      <section id="testimonials" class="section">
+        <h2 class="section-title">Member Stories</h2>
+        <p class="section-sub">What our members say about training at Fitness Zone.</p>
+
+        <div class="testimonials">
+          <blockquote class="quote">
+            <p>"I lost 10 kg in three months. The trainers guide you step by step."</p>
+            <footer><strong>Hamza Khan</strong><span>Weight Loss member</span></footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>"Clean gym, good equipment and a very supportive environment."</p>
+            <footer><strong>Bilal Ahmad</strong><span>Bodybuilding member</span></footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>"Boxing classes here are great. I feel stronger and more confident."</p>
+            <footer><strong>Zeeshan Ali</strong><span>Boxing member</span></footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Join call-to-action -->
+      <section id="join" class="section join">
+        <h2>Ready to start?</h2>
+        <p>Admission is only Rs 1,000. Visit us at University Chowk, Kohat, and start your journey today.</p>
+        <a href="#contact" class="btn">Visit Us</a>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== 6. FOOTER (sticky to bottom via flex body) ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Fitness Zone Kohat</h3>
+        <img src="images/logo.jpg" alt="Fitness Zone logo" width="90" height="90" class="footer-logo">
+        <p>Build the strongest version of you.</p>
+        <p>Kohat, KPK</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>University Chowk, Kohat Board, Kohat</p>
+        <p>0325 9597203</p>
+        <p>0301 1038280</p>
+        <p>irfanullahniazi31@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Fitness Zone Kohat. All rights reserved. | Designed by Irfan Ullah (CS120242064), BSCS</p>
+  </footer>
+
+</body>
+</html>
